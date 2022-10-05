@@ -7,7 +7,7 @@
                 <h2>Inventory Barang</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href=""> Create New Product</a>
+                <a class="btn btn-success" href="">Tambah Data Barang</a>
             </div>
         </div>
     </div>
@@ -23,7 +23,7 @@
             <th>Nama Barang</th>
             <th>Jumlah Barang</th>
             <th>Deskripsi Barang</th>
-            <th width="280px">Action</th>
+            <th width="280px">Aksi</th>
         </tr>
         @php $i=1 @endphp
         @foreach($barang as $brg)
