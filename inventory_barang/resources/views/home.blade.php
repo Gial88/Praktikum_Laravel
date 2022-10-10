@@ -23,15 +23,19 @@
             <th>Nama Barang</th>
             <th>Jumlah Barang</th>
             <th>Deskripsi Barang</th>
+            <th>Kategori Barang</th>
+            <th>Pemilik Barang</th>
             <th width="280px">Aksi</th>
         </tr>
         @php $i=1 @endphp
         @foreach($barang as $brg)
         <tr>
             <td>{{$i}}</td>
-            <td>{{$brg['nama_barang']}}</td>
-            <td>{{$brg['jumlah_barang']}}</td>
-            <td>{{$brg['deskripsi_barang']}}</td>
+            <td>{{$brg->nama_barang}}</td>
+            <td>{{$brg->jumlah_barang}}</td>
+            <td>{{$brg->deskripsi_barang}}</td>
+            <td>{{$brg->category->kategori}}</td>
+            <td>{{$brg->member->nama_member}}</td>
             <td>
                 <form action="" method="POST">
 

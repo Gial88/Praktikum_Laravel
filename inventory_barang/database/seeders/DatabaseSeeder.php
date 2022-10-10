@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-
+        \App\Models\Member::factory(10)->create();
+        $this->call([KategoriSeed::class]);
         $this->call([InventorySeed::class]);
     }
 

@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('inventories', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_barang');
-            $table->integer('jumlah_barang');
-            $table->text('deskripsi_barang');
-            $table->foreignId('category_id');
-            $table->foreignId('member_id');
+            $table->string('kategori');
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('inventories');
+        Schema::dropIfExists('categories');
     }
 };
