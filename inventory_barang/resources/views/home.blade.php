@@ -6,12 +6,13 @@
             <div class="pull-left">
                 <h2>Inventory Barang</h2>
             </div>
-            <div class="pull-right">
+            <div class="pull-right d-flex justify-content-between">
                 <a class="btn btn-success" href="">Tambah Data Barang</a>
+                <a class="btn btn-danger" href="{{ Auth::user() ? '/logout': '/login'}}">{{ Auth::user() ? 'Logout' : 'Login'}}</a>
             </div>
         </div>
     </div>
-
+    <br>
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p>{{ $message }}</p>

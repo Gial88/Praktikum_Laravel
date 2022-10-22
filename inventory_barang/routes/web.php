@@ -2,6 +2,7 @@
 
 use App\Models\Inventory;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home',["barang" => Inventory::all()]);
-})->name('home');
+})->name('home')->middleware(['auth']);;
+
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
+
+Route::get('/register', function () {
+    return view('register');
+})->name('register');
+
+Route::post('/action-register', [AuthController::class , 'actionRegister']);
+Route::post('/action-login', [AuthController::class , 'actionLogin']);
+Route::get('/logout', [AuthController::class , 'logout']);  
+Route::get('/login', [AuthController::class , 'loginView'])->name("login");
